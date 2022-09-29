@@ -5,6 +5,12 @@
   --four: #ffeddb;
 }
 
+@font-face {
+  font-family: "avengers";
+  src: local("avengers"),
+    url("HeroesAssembleDingbatsRegular-P6Zm.ttf") format("truetype");
+}
+
 * {
   box-sizing: border-box;
 }
@@ -30,11 +36,6 @@ body {
   overflow: hidden;
   padding: 4px;
 }
-@font-face {
-  font-family: "avengers";
-  src: local("avengers"),
-    url("HeroesAssembleDingbatsRegular-P6Zm.ttf") format("truetype");
-}
 
 .box {
   border: none;
@@ -42,9 +43,7 @@ body {
   height: 110px;
   border-radius: 4px;
   margin: 4px;
-  /* background: var(--three); */
   background: var(--one);
-
   display: inline-block;
   vertical-align: top;
   transition: 0.6s ease-in-out;
@@ -61,7 +60,6 @@ body {
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
 }
 
 .box-front,
@@ -89,43 +87,38 @@ body {
 .avengers {
   font-family: avengers;
 }
-.topbar {
-  font-size: 24px;
-  font-family: "Dangrek", cursive;
-  color: var(--one);
-  padding: 10px 20px;
-}
-.vitals{
+
+.vitals {
   width: 100%;
   max-width: 420px;
   margin: 10px auto;
   display: flex;
   justify-content: space-between;
 }
-.right {
-  float: right;
-}
+
 .timer {
   width: fit-content;
   background: var(--three);
   border: 3px solid var(--one);
   color: var(--four);
   font-family: "Dangrek", cursive;
-font-size: 20px;
+  font-size: 20px;
   border-radius: 4px;
   padding: 4px 16px;
   text-align: center;
   min-width: 120px;
 }
 
-.content{
-  width: 100%;
-  max-width: 420px;
-  margin: 10px auto;
-  font-family: "Dangrek", cursive;
-  color: var(--three);
+.right {
+  float: right;
 }
 
+.topbar {
+  font-size: 24px;
+  font-family: "Dangrek", cursive;
+  color: var(--one);
+  padding: 10px 20px;
+}
 
 .credits {
   width: 100%;
@@ -133,7 +126,6 @@ font-size: 20px;
   text-align: center;
   padding: 10px;
   font-family: "Dangrek", cursive;
-  
 }
 
 .credits a {
@@ -141,7 +133,7 @@ font-size: 20px;
   color: var(--one);
   text-decoration-line: underline;
 }
-.logo{
+.logo {
   width: 40px;
   border-radius: 50%;
 }
