@@ -2,7 +2,7 @@ var playground = document.getElementById("playground");
 var flips = 0, memory = [], matched = [], erase = true, moves = 0;
 var characters = ["I", "T", "C", "H", '"', '!', "B", "A"]
 var available = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-var time = 0, watch;
+var time = 0;
 
 for (var n = 0; n < 16; n++) {
   const box = document.createElement("button"),
@@ -19,6 +19,7 @@ for (var n = 0; n < 16; n++) {
   boxBack.classList.add("box-back")
   boxInner.appendChild(boxBack);
 }
+var over = false;
 
 function flip(e) {
   if (time === 0) {
@@ -36,7 +37,7 @@ function flip(e) {
       erase = false;
       if (matched.length === 16) {
         alert("you win!")
-        clearTimeout(watch)
+        startTimer("end");
       }
     }
   } else if (flips > 2) {
@@ -66,8 +67,13 @@ for (const char of characters) {
   boxBack[index2].innerHTML = char;
 }
 
-function startTimer() {
-  watch = setInterval(timer, 1000)
+function startTimer(command) {
+  if (command === "end") {
+    clearInterval(watch)
+    over = true;
+  } else {
+    var watch = setInterval(timer, 1000)
+  }
 }
 
 function msToTime(duration) {
@@ -84,6 +90,8 @@ function msToTime(duration) {
 }
 
 function timer() {
-  time += 1000;
-  document.getElementById("timer").innerHTML = msToTime(time)
+  if (!over) {
+    time += 1000;
+    document.getElementById("timer").innerHTML = msToTime(time)
+  }
 }
