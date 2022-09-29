@@ -12,6 +12,7 @@
 body {
   margin: 0;
   background: var(--four);
+  padding: 10px 20px;
 }
 .body_wrap {
   max-width: 1000px;

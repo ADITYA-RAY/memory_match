@@ -36,7 +36,10 @@ function flip(e) {
       matched.push(memory[0])
       matched.push(memory[1])
       erase = false;
-
+if(matched.length===16){
+  alert("you win!")
+  clearTimeout(watch)
+}
     }
   } else if (flips > 2) {
 
@@ -71,8 +74,9 @@ for (const char of characters) {
   document.getElementsByClassName("box-back")[index2].innerHTML = char;
 }
 var time = 0;
+var watch;
 function startTimer() {
-  setInterval(timer, 1000)
+  watch =setInterval(timer, 1000)
 }
 function msToTime(duration) {
   var milliseconds = Math.floor((duration % 1000) / 100),
