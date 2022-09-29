@@ -1,0 +1,146 @@
+:root {
+  --one: #bf9270;
+  --two: #edcdbb;
+  --three: #e3b7a0;
+  --four: #ffeddb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--four);
+}
+.body_wrap {
+  max-width: 1000px;
+  margin: 0px auto;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  height: fit-content;
+  background: var(--one);
+  margin: 40px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 4px;
+}
+@font-face {
+  font-family: "avengers";
+  src: local("avengers"),
+    url("HeroesAssembleDingbatsRegular-P6Zm.ttf") format("truetype");
+}
+
+.box {
+  border: none;
+  width: calc(25% - 8px);
+  height: 110px;
+  border-radius: 4px;
+  margin: 4px;
+  /* background: var(--three); */
+  background: var(--one);
+
+  display: inline-block;
+  vertical-align: top;
+  transition: 0.6s ease-in-out;
+  perspective: 1000px;
+  padding: 0;
+  font-family: "avengers";
+  font-size: 80px;
+}
+
+.box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+}
+
+.box-front,
+.box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.box-front {
+  width: 100%;
+  border-radius: 4px;
+  background: var(--three);
+}
+
+.box-back {
+  background-color: var(--two);
+  border-radius: 4px;
+  color: var(--one);
+  transform: rotateY(180deg);
+}
+
+.avengers {
+  font-family: avengers;
+}
+.topbar {
+  font-size: 24px;
+  font-family: "Dangrek", cursive;
+  color: var(--one);
+  padding: 10px 20px;
+}
+.vitals{
+  width: 100%;
+  max-width: 420px;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
+}
+.right {
+  float: right;
+}
+.timer {
+  width: fit-content;
+  background: var(--three);
+  border: 3px solid var(--one);
+  color: var(--four);
+  font-family: "Dangrek", cursive;
+font-size: 20px;
+  border-radius: 4px;
+  padding: 4px 16px;
+  text-align: center;
+  min-width: 120px;
+}
+
+.content{
+  width: 100%;
+  max-width: 420px;
+  margin: 10px auto;
+  font-family: "Dangrek", cursive;
+  color: var(--three);
+}
+
+
+.credits {
+  width: 100%;
+  color: var(--one);
+  text-align: center;
+  padding: 10px;
+  font-family: "Dangrek", cursive;
+  
+}
+
+.credits a {
+  text-decoration: none;
+  color: var(--one);
+  text-decoration-line: underline;
+}
+.logo{
+  width: 40px;
+  border-radius: 50%;
+}
